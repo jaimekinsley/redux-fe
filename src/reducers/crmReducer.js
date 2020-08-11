@@ -1,14 +1,24 @@
-import { SET_CONTACTS, SET_COMMUNICATIONS } from '../actions/crmActions';
+import { SET_CONTACTS, SET_COMMUNICATIONS, SET_CONTACTS_LOADING, SET_COMMUNICATIONS_LOADING } from '../actions/crmActions';
 
-export const initialState = [];
+export const initialState = {
+  loading: false,
+  contacts: [],
+  communications: []
+};
 
 export default function reducer(state, action) {
   switch(action.type) {
     case SET_CONTACTS:
-      return action.payload;
+      return { ...state, contacts: action.payload };
+
+    case SET_CONTACTS_LOADING:
+      return { ...state, loading: true };
 
     case SET_COMMUNICATIONS:
-      return action.payload;
+      return { ...state, communications: action.payload };
+
+    case SET_COMMUNICATIONS_LOADING:
+      return { ...state, loading: true };
 
     default:
       return state;
