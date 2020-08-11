@@ -7,6 +7,7 @@ import {
 import Signup from '../auth/Signup';
 import ContactsPage from './contacts/ContactsPage';
 import Header from '../header/Header';
+import Login from '../auth/Login';
 
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
       <Header />
       <Switch>
         <Route path="/signup" component={Signup} />
+        <Route path="/login" component={Login} />
       </Switch>
     </Router>
   );
