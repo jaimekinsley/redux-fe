@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { useSignUp } from '../../hooks/AuthContext';
+import { useSignup } from '../../hooks/AuthContext';
+import { useHistory } from 'react-router-dom';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [profileImage, setProfileImage] = useState('');
-  const signup = useSignUp();
+  const signup = useSignup();
+  const history = useHistory();
 
   const handleChange = ({ target }) => {
     if(target.name === 'email') setEmail(target.value);
@@ -15,7 +17,8 @@ const Signup = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    signup(email, password, profileImage);
+    signup(email, password, profileImage)
+      .then(() => history.push('/dashboard'));
   };
 
   return (

@@ -7,12 +7,17 @@ export const useCurrentUser = () => {
   return currentUser;
 };
 
+export const useAuthLoading = () => {
+  const { authLoading } = useContext(AuthContext);
+  return authLoading;
+};
+
 export const useAuthError = () => {
   const { authError } = useContext(AuthContext);
   return authError;
 };
 
-export const useSignUp = () => {
+export const useSignup = () => {
   const { signup } = useContext(AuthContext);
   return signup;
 };

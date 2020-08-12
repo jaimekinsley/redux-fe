@@ -5,9 +5,10 @@ import {
   Route
 } from 'react-router-dom';
 import Signup from '../auth/Signup';
-import ContactsPage from './contacts/ContactsPage';
 import Header from '../header/Header';
 import Login from '../auth/Login';
+import Dashboard from '../dashboard/Dashboard';
+import PrivateRoute from '../auth/PrivateRoute';
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
       <Switch>
         <Route path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
+        <PrivateRoute path="/dashboard" component={Dashboard} />
       </Switch>
     </Router>
   );

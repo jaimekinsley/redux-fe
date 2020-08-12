@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AuthContext } from '../hooks/AuthContext';
-import { fetchSignup, fetchLogin } from '../services/auth';
+import { fetchSignup, fetchLogin, fetchVerify } from '../services/auth';
 
+// eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
+  const [authLoading, setAuthLoading] = useState(true);
   const [authError, setAuthError] = useState(null);
 
   const authService = (serviceFn, ...args) => {
@@ -19,9 +21,14 @@ const AuthProvider = ({ children }) => {
   const login = (email, password) =>
     authService(fetchLogin, email, password);
 
+  useEffect(() => {
+    fetchVerify()
+      .then(user => setCurrentUser(user))
+      .finally(() => setAuthLoading(false));
+  }, []);
 
   return (
-    <AuthContext.Provider value={{ currentUser, authError, signup, login }}>
+    <AuthContext.Provider value={{ currentUser, authLoading, authError, signup, login }}>
       {children}
     </AuthContext.Provider>
   );
