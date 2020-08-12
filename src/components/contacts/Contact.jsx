@@ -10,7 +10,7 @@ const Contact = ({ name, communicationMedium, imageUrl }) => (
 
 Contact.propTypes = {
   name: PropTypes.string.isRequired,
-  communicationMedium: PropTypes.string.isRequired,
+  communicationMedium: PropTypes.arrayOf(PropTypes.string).isRequired,
   imageUrl: PropTypes.string.isRequired
 };
 

@@ -5,9 +5,8 @@ import Contact from './Contact';
 
 const Contacts = () => {
   const contacts = useSelector(getContacts);
-
   const contactElements = contacts.map(contact => (
-    <li key={contact.id}>
+    <li key={contact._id}>
       <Contact {...contact} />
     </li>
   ));
