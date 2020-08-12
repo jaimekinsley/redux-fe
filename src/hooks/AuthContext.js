@@ -7,6 +7,11 @@ export const useCurrentUser = () => {
   return currentUser;
 };
 
+export const useAuthError = () => {
+  const { authError } = useContext(AuthContext);
+  return authError;
+};
+
 export const useSignUp = () => {
   const { signup } = useContext(AuthContext);
   return signup;
@@ -15,4 +20,4 @@ export const useSignUp = () => {
 export const useLogin = () => {
   const { login } = useContext(AuthContext);
   return login;
-}
+};
