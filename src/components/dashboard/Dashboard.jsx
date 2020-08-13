@@ -1,9 +1,10 @@
 import React from 'react';
 import ContactsPage from '../contacts/ContactsPage';
+import AddContact from '../contacts/AddContact';
 
 const Dashboard = () => (
   <>
-    <h1>You are logged in!</h1>
+    <AddContact />
     <ContactsPage />
   </>
 );

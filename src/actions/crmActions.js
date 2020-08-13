@@ -4,6 +4,12 @@ export const setContacts = contacts => ({
   payload: contacts
 });
 
+export const SET_NEW_CONTACT = 'SET_NEW_CONTACT';
+export const setNewContact = contacts => ({
+  type: SET_NEW_CONTACT,
+  payload: contacts
+});
+
 export const SET_CONTACTS_LOADING = 'SET_CONTACTS_LOADING';
 export const setContactsLoading = () => ({
   type: SET_CONTACTS_LOADING

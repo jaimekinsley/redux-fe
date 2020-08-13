@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <>
       {currentUser
-        ? <img src={currentUser.profileImage} width="100" />
+        ? <h6>{currentUser.email}</h6>
         : <AuthLinks />}
     </>
   );
