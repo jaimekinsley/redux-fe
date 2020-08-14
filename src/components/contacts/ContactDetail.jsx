@@ -5,13 +5,12 @@ import { useDispatch } from 'react-redux';
 const ContactDetail = ({ match }) => {
   const [contact, setContact] = useState('');
   const [loading, setLoading] = useState(false);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     setLoading(true);
     fetchContactById(match.params._id)
-      .then(contact => {
-        dispatch(setContact(contact));
+      .then((contact) => {
+        setContact(contact);
       })
       .finally(() => setLoading(false));
   }, []);
