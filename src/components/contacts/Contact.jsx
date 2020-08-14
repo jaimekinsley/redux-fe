@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Contact = ({ name, communicationMedium, imageUrl }) => (
   <figure>
     <img src={imageUrl} />
-      <figcaption> {name} - {communicationMedium}</figcaption>
+    <figcaption> {name} - {communicationMedium}</figcaption>
   </figure>
 );
 

@@ -9,5 +9,6 @@ export const addContacts = (contact) => {
 };
 
 export const fetchContactById = (id) => {
+  console.log(id);
   return get(`/api/v1/contacts/${id}`);
 };

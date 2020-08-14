@@ -8,10 +8,8 @@ const ContactDetail = ({ match }) => {
 
   useEffect(() => {
     setLoading(true);
-    fetchContactById(match.params._id)
-      .then((contact) => {
-        setContact(contact);
-      })
+    fetchContactById(match.params.id)
+      .then((contact) => setContact(contact[0]))
       .finally(() => setLoading(false));
   }, []);
 
