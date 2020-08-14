@@ -7,3 +7,7 @@ export const fetchContacts = (page) => {
 export const addContacts = (contact) => {
   return post('/api/v1/contacts', contact);
 };
+
+export const fetchContactById = (id) => {
+  return get(`/api/v1/contacts/${id}`);
+};
